@@ -8,23 +8,25 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            background: linear-gradient(135deg, #2c2c2c, #000000);
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 0;
+            color: #ffffff;
         }
 
         .register-container {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             padding: 40px;
             width: 100%;
             max-width: 550px;
             color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .register-container h2 {
@@ -39,15 +41,22 @@
             border: none;
             font-size: 1rem;
             transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .form-control:focus {
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
             border: none;
+            background: rgba(255, 255, 255, 0.3);
         }
 
         .register {
-            background: linear-gradient(90deg, #ff512f, #dd2476);
+            background: linear-gradient(90deg, #777777, #444444);
             border: none;
             padding: 12px;
             color: white;
@@ -58,7 +67,7 @@
         }
 
         .register:hover {
-            background: linear-gradient(90deg, #dd2476, #ff512f);
+            background: linear-gradient(90deg, #444444, #777777);
         }
 
         .text-light a {
@@ -69,7 +78,7 @@
         }
 
         .text-light a:hover {
-            color: #ff512f;
+            color: #bbbbbb;
         }
 
         @media (max-width: 768px) {
