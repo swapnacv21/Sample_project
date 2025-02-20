@@ -1,0 +1,402 @@
+  /* Make carousel images responsive */
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures the image covers the whole container */
+  }
+
+  /* Adjust the height for small devices */
+  @media (max-width: 768px) {
+      .carousel-item img {
+          height: 400px; /* Adjust to a smaller height for mobile screens */
+      }
+      .carousel-caption h3 {
+          font-size: 1.5rem; /* Make heading text smaller on small screens */
+      }
+      .carousel-caption p {
+          font-size: 1rem; /* Make paragraph text smaller on small screens */
+      }
+  }
+
+  /* Adjust the height for medium screens */
+  @media (max-width: 992px) {
+      .carousel-item img {
+          height: 500px; /* Adjust to a middle height for tablets */
+      }
+  }
+
+  /* Ensure cards have the same height */
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-body {
+    flex-grow: 1; /* Allow the card body to grow and fill remaining space */
+  }
+
+  /* Ensure cards have the same height */
+  .card {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .card-body {
+      flex-grow: 1; /* Allow the card body to grow and fill remaining space */
+  }
+
+  .card-img-top {
+      object-fit: cover;
+      height: 200px; /* Set a fixed height for the images */
+  }
+
+  .card-title, .card-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }
+
+  .btn {
+      margin-top: 10px; /* Space between the buttons */
+  }
+
+  /* Optional: Adjust padding for the card body */
+  .card-body {
+      padding: 1rem;
+  }
+
+  footer {
+    background-color: #222222;
+    color: #ffffff;
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+
+  footer h5, footer h6 {
+    font-size: 20px;
+    color: goldenrod;
+    margin-bottom: 20px;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: #bbb;
+    transition: color 0.3s ease;
+  }
+
+  footer a:hover {
+    color: goldenrod;
+  }
+
+  footer .col-md-3 {
+    padding: 20px;
+  }
+
+  footer .social-links i {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: #bbb;
+    transition: color 0.3s ease;
+  }
+
+  footer .social-links i:hover {
+    color: goldenrod;
+  }
+
+  footer .list-unstyled li {
+    margin-bottom: 10px;
+  }
+
+  footer .footer-bottom {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+    color: #ccc;
+    font-size: 14px;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    footer h5, footer h6 {
+      font-size: 18px;
+    }
+
+    footer .col-md-3 {
+      padding: 15px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    footer .col-md-3 {
+      padding: 10px;
+    }
+
+    footer h5, footer h6 {
+      font-size: 16px;
+    }
+  }
+
+
+
+  /* Banner Section Styling */
+.banner_section {
+    background: linear-gradient(to right, #30383f, #8c8b8b);
+    padding: 60px 0;
+    color: #fff;
+}
+
+.banner_taital {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.banner_text {
+    font-size: 16px;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+.banner_taital span {
+    color: #fe5b29;
+}
+
+.btn_main {
+    margin-top: 20px;
+}
+
+.contact_bt a {
+    display: inline-block;
+    background: #fff;
+    color: #007bff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact_bt.active a {
+    background: #fe5b29;
+    color: #fff;
+}
+
+.contact_bt a:hover {
+    background: #0056b3;
+    color: #fff;
+}
+
+.banner_img img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Carousel Controls */
+/* .carousel-control-prev, .carousel-control-next {
+    color: #fff;
+    font-size: 24px;
+} */
+
+/* .carousel-control-prev i, .carousel-control-next i {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+} */
+
+/* .carousel-control-prev i:hover, .carousel-control-next i:hover {
+    background: rgba(255, 255, 255, 0.7);
+    color: #007bff;
+} */
+
+
+
+/* General Styling */
+.search_section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('car-background.jpg') center/cover no-repeat;
+    padding: 60px 0;
+    color: white;
+    text-align: center;
+}
+
+.search_taital {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.search_text {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Select Box Styling */
+.select_box_section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.select-outline select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background: white;
+    color: #333;
+    font-size: 16px;
+}
+
+.select-outline select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Search Button Styling */
+.search_btn {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.search_btn a {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.search_btn a:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .search_taital {
+        font-size: 28px;
+    }
+    .search_text {
+        font-size: 16px;
+    }
+    .select-outline {
+        margin-bottom: 10px;
+    }
+}
+
+
+.gallery_section {
+  padding: 90px 0;
+}
+
+.gallery_card {
+  border: none;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+  height: 100%; /* Ensures all cards are the same height */
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery_card:hover {
+  transform: scale(1.05);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 300px; /* Adjusted for a uniform size */
+  object-fit: cover; /* Ensures images cover the area without distortion */
+}
+
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .col-md-4 {
+    width: 100%;
+  }
+}
+
+.choose_section {
+  padding: 80px 0;
+  background-color: #f8f9fa; /* Light background for contrast */
+  text-align: center;
+}
+
+.choose_taital {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.choose_section_2 .col-sm-4 {
+  text-align: center;
+  padding: 20px;
+}
+
+.icon_1 img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+  background-color: black;
+}
+
+.safety_text {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.ipsum_text {
+  font-size: 16px;
+  color: #666;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .choose_taital {
+    font-size: 28px;
+  }
+
+  .icon_1 img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .safety_text {
+    font-size: 20px;
+  }
+}
+
+
+.booking-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 50px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0,0.1);
+    background: linear-gradient(to right, #4d5155, #aca7a7);
+    color: white;
+
+}
