@@ -8,6 +8,7 @@ from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.conf import settings
 from datetime import datetime
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -16,8 +17,8 @@ from datetime import datetime
 def shop_login(req):
     if 'shop' in req.session:
         return redirect(shop_home)
-    if 'user' in req.session:
-        return redirect(user_home)
+    # if 'user' in req.session:
+    #     return redirect(user_home)
     if req.method=='POST':
         uname=req.POST['uname']
         password=req.POST['password']
@@ -153,7 +154,45 @@ def cars_list(req,id):
 def about(req):
     return render(req,'shop/about.html')
 
+# def book_car(request, car_id):
+#     car = get_object_or_404(Cars, id=car_id)
+
+#     if request.method == "POST":
+#         customer_name = request.POST["customer_name"]
+#         customer_email = request.POST["customer_email"]
+#         customer_phone = request.POST["customer_phone"]
+#         start_date = request.POST["start_date"]
+#         end_date = request.POST["end_date"]
+
+#         try:
+#             # Convert dates from string to actual date format
+#             start_date = datetime.strptime(start_date, "%Y-%m-%d").date()
+#             end_date = datetime.strptime(end_date, "%Y-%m-%d").date()
+
+#             # Save booking
+#             new_booking = Booking.objects.create(
+#                 car=car,
+#                 customer_name=customer_name,
+#                 customer_email=customer_email,
+#                 customer_phone=customer_phone,
+#                 start_date=start_date,
+#                 end_date=end_date,
+#             )
+#             new_booking.save()
+#             return HttpResponse("Car booked successfully!")
+
+#         except Exception as e:
+#             return HttpResponse(f"Error: {e}", status=400)
+
+#     return render(request, "user/book_car.html",{"cars":car})
+
+
+
 def book_car(request, car_id):
+    # Check if user is logged in
+    if 'user' in request.session:
+        return redirect(register)
+
     car = get_object_or_404(Cars, id=car_id)
 
     if request.method == "POST":
@@ -164,7 +203,7 @@ def book_car(request, car_id):
         end_date = request.POST["end_date"]
 
         try:
-            # Convert dates from string to actual date format
+            # Convert dates to date format
             start_date = datetime.strptime(start_date, "%Y-%m-%d").date()
             end_date = datetime.strptime(end_date, "%Y-%m-%d").date()
 
@@ -178,9 +217,11 @@ def book_car(request, car_id):
                 end_date=end_date,
             )
             new_booking.save()
-            return HttpResponse("Car booked successfully!")
+            messages.success(request, "Car booked successfully!")
+            return redirect("user_home")  # Redirect to user home page after booking
 
         except Exception as e:
-            return HttpResponse(f"Error: {e}", status=400)
+            messages.error(request, f"Error: {e}")
+            return redirect("book_car", car_id=car_id)
 
-    return render(request, "user/book_car.html",{"cars":car})
+    return render(request,"user/book_car.html",{"cars":car})

@@ -37,6 +37,7 @@
     </style>
 </head>
 <body>
+    
     <div class="container mt-4">
         <h1 class="text-center">Car List</h1>
         {% if car_details %}
@@ -53,8 +54,9 @@
                             <strong>Rent:</strong> {{ car.car_rent }} per day <br>
                             <strong>Place:</strong> {{ car.car_place }} 
                         </p>
-                        <a href="" class="btn btn-danger">Book Now</a>
-                        
+                        <a href="{% url 'book_car' car.id %}" class="btn btn-danger">Book Now</a>
+                        <!-- ../cars_list/{{car.id}} -->
+                        <!-- book/<int:car_id>/ -->
                     </div>
                 </div>
             </div>
