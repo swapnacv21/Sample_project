@@ -9,8 +9,7 @@ urlpatterns=[
     path('edit-car/<int:car_id>/', views.edit_car, name='edit_car'),
     path('delete_car/<int:id>/', views.delete_car, name='delete_car'),
     path('budget_cars/<id>',views.budget_cars),
-
-
+    path('about',views.about),
 
     path('register',views.register),
     path('user_home',views.user_home),

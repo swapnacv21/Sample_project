@@ -211,6 +211,9 @@
 
 
 
+
+
+
 /* General Styling */
 .search_section {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('car-background.jpg') center/cover no-repeat;
@@ -230,65 +233,6 @@
     margin-bottom: 30px;
 }
 
-/* Select Box Styling */
-.select_box_section {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.select-outline select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    background: white;
-    color: #333;
-    font-size: 16px;
-}
-
-.select-outline select:focus {
-    border-color: #007bff;
-    outline: none;
-    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
-}
-
-/* Search Button Styling */
-.search_btn {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.search_btn a {
-    display: inline-block;
-    background: #007bff;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s ease-in-out;
-}
-
-.search_btn a:hover {
-    background: #0056b3;
-    transform: scale(1.05);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .search_taital {
-        font-size: 28px;
-    }
-    .search_text {
-        font-size: 16px;
-    }
-    .select-outline {
-        margin-bottom: 10px;
-    }
-}
 
 
 .gallery_section {

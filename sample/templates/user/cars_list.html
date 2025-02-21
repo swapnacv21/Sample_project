@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/css/bootstrap.min.css">
+    <style>
+        /* Ensures all cards have the same height */
+        .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Makes all cards have the same height */
+        }
+
+        .card-body {
+            flex-grow: 1; /* Ensures the body grows to take up remaining space */
+        }
+
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Ensures that the Delete button is at the bottom */
+        .btn-danger {
+            margin-top: auto;
+        }
+
+        /* Responsive Design: Cards on small screens take full width */
+        @media (max-width: 768px) {
+            .col-md-4 {
+                flex: 0 0 100%; /* Takes full width on smaller screens */
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">Car List</h1>
+        {% if car_details %}
+        <div class="row">
+            {% for car in car_details %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ car.car_img.url }}" class="card-img-top" alt="{{ car.car_name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ car.car_name }}</h5>
+                        <p class="card-text">
+                            <strong>Year:</strong> {{ car.car_year }} <br>
+                            <strong>Fuel:</strong> {{ car.car_fuel }} <br>
+                            <strong>Rent:</strong> {{ car.car_rent }} per day <br>
+                            <strong>Place:</strong> {{ car.car_place }} 
+                        </p>
+                        <a href="" class="btn btn-danger">Book Now</a>
+                        
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No cars available.</p>
+        {% endif %}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
