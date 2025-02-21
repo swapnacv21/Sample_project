@@ -6,40 +6,59 @@
     <title>Car List</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/css/bootstrap.min.css">
     <style>
-        /* Ensures all cards have the same height */
+        body {
+            background-color: #f8f9fa;
+        }
         .card {
             display: flex;
             flex-direction: column;
-            height: 100%; /* Makes all cards have the same height */
+            height: 100%;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
         .card-body {
-            flex-grow: 1; /* Ensures the body grows to take up remaining space */
+            flex-grow: 1;
         }
-
         .card img {
             height: 200px;
             object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
         }
-
-        /* Ensures that the Delete button is at the bottom */
         .btn-danger {
             margin-top: auto;
+            transition: background-color 0.3s ease;
         }
-
-        /* Responsive Design: Cards on small screens take full width */
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #343a40;
+        }
         @media (max-width: 768px) {
             .col-md-4 {
-                flex: 0 0 100%; /* Takes full width on smaller screens */
+                flex: 0 0 100%;
                 max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    
+
+
+
+
+      
     <div class="container mt-4">
-        <h1 class="text-center">Car List</h1>
+        <h1 class="text-center">Book Your Car Now</h1>
         {% if car_details %}
         <div class="row">
             {% for car in car_details %}
@@ -47,7 +66,7 @@
                 <div class="card">
                     <img src="{{ car.car_img.url }}" class="card-img-top" alt="{{ car.car_name }}">
                     <div class="card-body">
-                        <h5 class="card-title">{{ car.car_name }}</h5>
+                        <h5 class="card-title text-primary">{{ car.car_name }}</h5>
                         <p class="card-text">
                             <strong>Year:</strong> {{ car.car_year }} <br>
                             <strong>Fuel:</strong> {{ car.car_fuel }} <br>
@@ -55,17 +74,19 @@
                             <strong>Place:</strong> {{ car.car_place }} 
                         </p>
                         <a href="{% url 'book_car' car.id %}" class="btn btn-danger">Book Now</a>
-                        <!-- ../cars_list/{{car.id}} -->
-                        <!-- book/<int:car_id>/ -->
                     </div>
                 </div>
             </div>
             {% endfor %}
         </div>
         {% else %}
-        <p>No cars available.</p>
+        <p class="text-center text-muted">No cars available.</p>
         {% endif %}
     </div>
+
+
+
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
 </body>
