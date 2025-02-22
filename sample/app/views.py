@@ -225,3 +225,8 @@ def book_car(request, car_id):
             return redirect("book_car", car_id=car_id)
 
     return render(request,"user/book_car.html",{"cars":car})
+
+
+
+
+
