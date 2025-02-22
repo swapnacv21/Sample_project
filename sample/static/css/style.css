@@ -191,29 +191,6 @@
     border-radius: 10px;
 }
 
-/* Carousel Controls */
-/* .carousel-control-prev, .carousel-control-next {
-    color: #fff;
-    font-size: 24px;
-} */
-
-/* .carousel-control-prev i, .carousel-control-next i {
-    background: rgba(255, 255, 255, 0.3);
-    padding: 10px;
-    border-radius: 50%;
-    transition: all 0.3s ease-in-out;
-} */
-
-/* .carousel-control-prev i:hover, .carousel-control-next i:hover {
-    background: rgba(255, 255, 255, 0.7);
-    color: #007bff;
-} */
-
-
-
-
-
-
 /* General Styling */
 .search_section {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('car-background.jpg') center/cover no-repeat;
@@ -232,8 +209,6 @@
     font-size: 18px;
     margin-bottom: 30px;
 }
-
-
 
 .gallery_section {
   padding: 90px 0;
