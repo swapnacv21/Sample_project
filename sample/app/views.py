@@ -102,6 +102,14 @@ def edit_car(request, car_id):
 
 
 
+# def delete_car(request, id):
+#     car = get_object_or_404(Cars, pk=id)
+#     image_path = car.car_img.path 
+#     if os.path.exists(image_path):
+#         os.remove(image_path) 
+#     car.delete()
+#     return redirect(shop_home)
+
 def delete_car(request, id):
     car = get_object_or_404(Cars, pk=id)
     image_path = car.car_img.path 
@@ -173,48 +181,6 @@ def contact(request):
         return redirect("contact")  # Redirect to the same page after submission
 
     return render(request,"shop/contact.html")
-
-
-
-def book_car(request, car_id):
-    # Check if user is logged in
-    if 'user' in request.session:
-        return redirect(register)
-
-    car = get_object_or_404(Cars, id=car_id)
-
-    if request.method == "POST":
-        customer_name = request.POST["customer_name"]
-        customer_email = request.POST["customer_email"]
-        customer_phone = request.POST["customer_phone"]
-        start_date = request.POST["start_date"]
-        end_date = request.POST["end_date"]
-
-        try:
-            # Convert dates to date format
-            start_date = datetime.strptime(start_date, "%Y-%m-%d").date()
-            end_date = datetime.strptime(end_date, "%Y-%m-%d").date()
-
-            # Save booking
-            new_booking = Booking.objects.create(
-                car=car,
-                customer_name=customer_name,
-                customer_email=customer_email,
-                customer_phone=customer_phone,
-                start_date=start_date,
-                end_date=end_date,
-            )
-            new_booking.save()
-            messages.success(request, "Car booked successfully!")
-            return redirect("user_home")  # Redirect to user home page after booking
-
-        except Exception as e:
-            messages.error(request, f"Error: {e}")
-            return redirect("book_car", car_id=car_id)
-
-    return render(request,"user/book_car.html",{"cars":car})
-
-
 
 
 

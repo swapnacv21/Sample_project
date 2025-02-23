@@ -12,8 +12,6 @@ urlpatterns=[
     path('about',views.about),
     path("contact",views.contact, name="contact"),
     
-    path('book_car/<int:car_id>/',views.book_car, name='book_car'),
-
     path('register',views.register),
     path('',views.user_home),
     path('cars_list/<int:id>/', views.cars_list),
