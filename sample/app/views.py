@@ -154,37 +154,25 @@ def cars_list(req,id):
 def about(req):
     return render(req,'shop/about.html')
 
-# def book_car(request, car_id):
-#     car = get_object_or_404(Cars, id=car_id)
+def contact(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        message = request.POST.get("message")
 
-#     if request.method == "POST":
-#         customer_name = request.POST["customer_name"]
-#         customer_email = request.POST["customer_email"]
-#         customer_phone = request.POST["customer_phone"]
-#         start_date = request.POST["start_date"]
-#         end_date = request.POST["end_date"]
+        # Send email notification
+        send_mail(
+            subject=f"New Contact Message from {name}",
+            message=f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}",
+            from_email=email,
+            recipient_list=["support@cargo.com"],  # Change this to your business email
+            fail_silently=False,
+        )
 
-#         try:
-#             # Convert dates from string to actual date format
-#             start_date = datetime.strptime(start_date, "%Y-%m-%d").date()
-#             end_date = datetime.strptime(end_date, "%Y-%m-%d").date()
+        messages.success(request, "Your message has been sent successfully!")
+        return redirect("contact")  # Redirect to the same page after submission
 
-#             # Save booking
-#             new_booking = Booking.objects.create(
-#                 car=car,
-#                 customer_name=customer_name,
-#                 customer_email=customer_email,
-#                 customer_phone=customer_phone,
-#                 start_date=start_date,
-#                 end_date=end_date,
-#             )
-#             new_booking.save()
-#             return HttpResponse("Car booked successfully!")
-
-#         except Exception as e:
-#             return HttpResponse(f"Error: {e}", status=400)
-
-#     return render(request, "user/book_car.html",{"cars":car})
+    return render(request,"shop/contact.html")
 
 
 
